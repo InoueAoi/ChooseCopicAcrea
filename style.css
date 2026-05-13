@@ -1,0 +1,71 @@
+/* Copyright 2026 井上葵. */
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    text-align: center;
+    background-image: url('');
+}
+div#wrapper {
+    font-family: 'M PLUS 2', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    display: block;
+    width: 720px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: beige;
+}
+header {
+    display: inline-block;
+    width: fit-content;
+    margin: 16px auto;
+    background-color: white;
+}
+h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 8px;
+    font-size: 24px;
+}
+button{
+    font-family: 'M PLUS 2', sans-serif;
+}
+section.nav {
+    display: block;
+    margin: 16px auto;
+}
+section#result {
+    display: none;
+}
+table{
+    text-align: left;
+    margin: auto;
+}
+#color-table tr{
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 8px;
+}
+#color-table tr td{
+    display: block;
+}
+.colors::before{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    box-sizing: border-box;
+    background-color: #eeeeee;
+}

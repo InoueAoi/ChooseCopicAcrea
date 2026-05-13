@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--Google Fonts MPLUS 2-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./style.css">
+        <title>コピックアクレアガチャ</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>コピックアクレアガチャ</h1>
+            </header>
+
+            <section class="nav">
+                <p>ボタンを押して、アクレアを3本引きましょう</p>
+                <button id="gacha-button">スタート</button>
+            </section>
+
+            <section class="nav">
+                <div>オプション: 除外する色</div>
+                <!--ここから色リスト-->
+                <table id="color-table">
+                    <tr>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">スノーホワイト</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">リッチブラック</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">クールグレイ</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">セピア</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">ゴールド</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">シルバー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">フラミンゴピンク</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">トマトレッド</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">マンダリンオレンジ</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">レモンイエロー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">リーフグリーン</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">スカイブルー</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">コーラルピンク</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">カスタードベージュ</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">クリームイエロー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">アップルグリーン</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">ターコイズブルー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">ライラック</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">レッドビーン</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">ダークローズ</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">マスタードイエロー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">ピーコックグリーン</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">パンジー</span></label></td>
+                        <td><label><input type="checkbox" class="removed-color"><span class="colors">インディゴブルー</span></label></td>
+                    </tr>
+                </table>
+                <!--ここまで色リスト-->
+            </section>
+
+            <section id="result">
+                <div>結果</div>
+                <div>
+                <p class="result-colors colors"></p>
+                <p class="result-colors colors"></p>
+                <p class="result-colors colors"></p>
+                </div>
+                <canvas id="result-graph"></canvas>
+            </section>
+
+            <footer>
+                <p>&copy; 2026 井上葵.</p>
+            </footer>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
