@@ -24,13 +24,13 @@ div#wrapper {
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: beige;
+    background-color: #f5f5dc;
 }
 header {
     display: inline-block;
     width: fit-content;
     margin: 16px auto;
-    background-color: white;
+    background-color: #ffffff;
 }
 h1 {
     display: inline-block;
@@ -45,9 +45,6 @@ section.nav {
     display: block;
     margin: 16px auto;
 }
-section#result {
-    display: none;
-}
 table{
     text-align: left;
     margin: auto;
@@ -61,11 +58,53 @@ table{
 #color-table tr td{
     display: block;
 }
-.colors::before{
+span.colors {
+    --before-bg-color: #ffffff;
+    display: inline-block;
+    margin: 0;
+    padding: 4px;
+    vertical-align: middle;
+}
+span.colors::before{
     display: inline-block;
     width: 1em;
     height: 1em;
     content: "";
     box-sizing: border-box;
-    background-color: #eeeeee;
+    background-color: var(--before-bg-color);
+}
+section#result {
+    display: none;
+}
+section#result div{
+    display: block;
+    width: 300px;
+    margin: 8px auto;
+    background-color: #ffffff;
+    padding: 4px;
+}
+section#result div div{
+    display: block;
+    width: auto;
+    height: fit-content;
+    margin: 8px auto;
+    text-align: left;
+}
+h2{
+    display: inline-block;
+    font-size: 18px;
+    margin: 8px auto;
+}
+canvas#result-graph{
+    display: block;
+    width: 240px;
+    height: 240px;
+    margin: 8px auto;
+}
+p.result-colors {
+    display: inline-block;
+    vertical-align: middle;
+}
+p{
+    margin: 0;
 }
