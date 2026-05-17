@@ -36,10 +36,11 @@ h1 {
 }
 button{
     font-family: 'M PLUS 2', sans-serif;
+    margin: 4px;
 }
 section.nav {
     display: block;
-    margin: 16px auto;
+    margin: 8px auto;
 }
 table{
     text-align: left;

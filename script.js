@@ -3,6 +3,7 @@
 // 変数の定義
 const
     button = document.getElementById('gacha-button'),
+    todays = document.getElementById('todays'),
     back = document.getElementById('back'),
     navs = document.getElementsByClassName('nav'),
     removedChecks =document.getElementsByClassName('removed-color'),
@@ -27,9 +28,7 @@ async function chooseColors() {
         count = 0;
     let colors = await getJSON();
     //  canvas機能に対応しているか
-    if(canvas.getContext) {
-       var ctx = canvas.getContext('2d');
-    } else {
+    if(!canvas.getContext) {
         window.alert('ブラウザがCanvasに対応していません。\nこのアプリはご利用いただけません。');
     }
     //  JSON（色リスト）からチェックのついたものを除外
@@ -55,8 +54,28 @@ async function chooseColors() {
             colors[random] = null;
         }
     }
+    displayResult(choosen);
+}
+// 日替わりで色を選ぶ
+async function todaysColors() {
+    let today = new Date();
+    let colors = await getJSON();
+    let date = today.getDate(),
+        day = today.getDay(),
+        month = today.getMonth(),
+        years = today.getFullYear();
+    let choosen = [];
+    choosen.push(colors[(month + date + day) % colors.length]);
+    choosen.push(colors[(years + date + day) % colors.length]);
+    choosen.push(colors[(years + month + date + day) % colors.length]);
+    displayResult(choosen);
+}
+// 結果の欄に出力する関数
+function displayResult(colorArray) {
+    //  キャンバス要素取得
+    var ctx = canvas.getContext('2d');
     //  結果の欄に出力
-    choosen.forEach((choice, i) => {
+    colorArray.forEach((choice, i) => {
         // console.log(choice);
         let br = document.createElement('br');
         // resultBox > div > div > span を取得
@@ -88,6 +107,7 @@ async function setSpanColor() {
 
 // ハンドル
 button.onclick = chooseColors;
+todays.onclick = todaysColors;
 back.onclick = () => {
     for(let nav of navs) {
         nav.style.display = 'block';
