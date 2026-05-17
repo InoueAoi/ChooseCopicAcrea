@@ -2,14 +2,12 @@
 html {
     height: 100%;
     width: 100%;
-    font-size: 0;
 }
 body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 0;
     text-align: center;
     background-image: url('');
 }
@@ -18,9 +16,7 @@ div#wrapper {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
     display: block;
-    width: 720px;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -36,7 +32,6 @@ h1 {
     display: inline-block;
     margin: 0;
     padding: 8px;
-    font-size: 24px;
 }
 button{
     font-family: 'M PLUS 2', sans-serif;
@@ -53,7 +48,7 @@ table{
     display: inline-block;
     width: fit-content;
     height: fit-content;
-    margin: 8px;
+    margin: 4px;
 }
 #color-table tr td{
     display: block;
@@ -63,7 +58,6 @@ span.colors {
     display: inline-block;
     margin: 0;
     padding: 4px;
-    vertical-align: middle;
 }
 span.colors::before{
     display: inline-block;
@@ -90,9 +84,11 @@ section#result div div{
     margin: 8px auto;
     text-align: left;
 }
+section#result div div span.colors{
+    vertical-align: middle;
+}
 h2{
     display: inline-block;
-    font-size: 18px;
     margin: 8px auto;
 }
 canvas#result-graph{
@@ -107,4 +103,40 @@ p.result-colors {
 }
 p{
     margin: 0;
+}
+/* PCなどのレスポンシブデザイン */
+@media screen and (min-width: 1024px) {
+    div#wrapper{
+        width: 720px;
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+}
+/* スマホなどレスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    html {
+        height: fit-content;
+    }
+    body {
+        height: fit-content;
+    }
+    div#wrapper{
+        display: block;
+        width: 100%;
+        height: fit-content;
+        font-size: 12px;
+    }
+    h1{
+        display: inline-block;
+        font-size: 32px;
+    }
+    h2{
+        display: inline-block;
+        font-size: 24px;
+    }
 }
