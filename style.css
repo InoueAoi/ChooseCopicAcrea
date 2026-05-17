@@ -120,15 +120,15 @@ p{
 /* スマホなどレスポンシブデザイン */
 @media screen and (max-width: 768px) {
     html {
-        height: fit-content;
+        height: max(fit-content, 100%);
     }
     body {
-        height: fit-content;
+        height: 100%;
     }
     div#wrapper{
         display: block;
         width: 100%;
-        height: fit-content;
+        height: 100%;
         font-size: 12px;
     }
     h1{
