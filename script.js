@@ -65,9 +65,20 @@ async function todaysColors() {
         month = today.getMonth(),
         years = today.getFullYear();
     let choosen = [];
-    choosen.push(colors[(month + date + day) % colors.length]);
-    choosen.push(colors[(years + date + day) % colors.length]);
-    choosen.push(colors[(years + month + date + day) % colors.length]);
+    let first = (month + date + day) % colors.length,
+        second = (years + date + day) % colors.length,
+        third = (years + month + date + day) % colors.length;
+    if (first === second) {
+        //  9は適当な数字です。
+        second = (second * date + date + 9) % colors.length;
+    }
+    if (first === third) {
+        //  7は適当な数字です。
+        third = (third % day + date + 7) % colors.length;
+    }
+    choosen.push(colors[first]);
+    choosen.push(colors[second]);
+    choosen.push(colors[third]);
     displayResult(choosen);
 }
 // 結果の欄に出力する関数
