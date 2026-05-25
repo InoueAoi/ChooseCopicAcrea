@@ -128,5 +128,4 @@ back.onclick = () => {
         result.textContent = null;
     }
 }
-//関数の実行
-setSpanColor();
+window.onload = setSpanColor;
